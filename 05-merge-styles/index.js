@@ -1,10 +1,10 @@
 const path = require('path');
 const fs = require('fs');
 
-async function MergeStyles() {
+async function mergeStyles() {
   try { 
     const styles = await fs.promises.readdir(path.join(__dirname, 'styles'), {withFileTypes: true});
-    const writeStream = fs.createWriteStream(path.resolve(path.join(__dirname, 'project-dist'), 'bundle.css'));
+    const writeStream = await fs.createWriteStream(path.resolve(path.join(__dirname, 'project-dist'), 'bundle.css'));
     
     for (let style of styles) {
       let stylePath = path.resolve(path.join(__dirname, 'styles'), style.name);
@@ -18,4 +18,4 @@ async function MergeStyles() {
   }
 }
 
-MergeStyles();
+mergeStyles();

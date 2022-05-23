@@ -59,7 +59,7 @@ async function copyDirectory(fromPath, toPath) {
       if (file.isFile()) {
         await fs.promises.copyFile(filePath, path.join(toPath, file.name));
       } else if (file.isDirectory()) {
-        copyDirectory(filePath, path.join(toPath, file.name))
+        copyDirectory(filePath, path.join(toPath, file.name));
       }
     }
   } catch (err) {

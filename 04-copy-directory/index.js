@@ -2,7 +2,7 @@
 const path = require('path');
 const fs = require('fs');
 
-async function CreateDir() {
+async function copyDir() {
   try {
     const files = await fs.promises.readdir(path.join(__dirname, 'files'), {withFileTypes: true});
 
@@ -17,4 +17,4 @@ async function CreateDir() {
   }
 }
 
-CreateDir();
+copyDir();
