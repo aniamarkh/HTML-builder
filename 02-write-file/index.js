@@ -4,7 +4,7 @@ const { stdin, stdout } = process;
 
 const output = fs.createWriteStream(path.join(__dirname, 'text.txt'));
 
-stdout.write('Hey! Enter some text ;3');
+stdout.write('Hey! Enter some text here: ');
 stdin.on('data', data => {
   if (data.toString().trim() === 'exit') {
     stdout.write('Oh okay... Buy!');
